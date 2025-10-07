@@ -1,0 +1,19 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Car {
+  id        Int      @id @default(autoincrement())
+  make      String
+  model     String
+  year      Int
+  price     Float
+  createdAt DateTime @default(now())
+}
